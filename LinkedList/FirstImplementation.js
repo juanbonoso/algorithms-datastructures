@@ -48,6 +48,7 @@ class LinkedList {
             currentNode = currentNode.next;
         }
         console.log(array);
+        console.log(this.tail);
     }
     // Loop until a position before the index
     // Save the pointer of our current node
@@ -66,6 +67,26 @@ class LinkedList {
         leader.next = newNode;
         newNode.next = holdingPointer;
         this.length++;
+    }
+
+    remove(indexToDelete) {
+        if (indexToDelete === 0) {
+            this.head = this.head.next;
+            this.length--;
+            return;
+        }
+        const leader = this.traverseToIndex(indexToDelete - 1);
+        let nodeToDelete = leader.next;
+        if (indexToDelete === this.length - 1) {
+            nodeToDelete = null;
+            leader.next = null;
+            this.tail = leader;
+        } else {
+            // the element next to the one to be deleted
+            leader.next = nodeToDelete.next;
+            // javascript will automatically delete nodeToDelete since there's no pointer
+        }
+        this.length--;
     }
 
     traverseToIndex(index) {
@@ -95,5 +116,14 @@ myLinkedList.insert(4, 5.7);
 myLinkedList.insert(200, 99);
 myLinkedList.insert(0, -5);
 myLinkedList.insert(30, 850);
+myLinkedList.printList();
+
+myLinkedList.remove(0);
+myLinkedList.printList();
+
+myLinkedList.remove(3);
+myLinkedList.printList();
+
+myLinkedList.remove(13);
 
 myLinkedList.printList();
