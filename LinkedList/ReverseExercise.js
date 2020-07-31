@@ -86,6 +86,9 @@ class LinkedList {
     }
 
     reverse() {
+        if (!this.head.next) {
+            return this.head;
+        }
         for (let x = this.length - 1; x > 0; x--) {
             let currentNode = this.head;
             for (let i = 0; i < x; i++) {
@@ -97,6 +100,25 @@ class LinkedList {
             }
         }
     }
+    reverseImproved() {
+        // Time O(n)
+        // Space O(1)
+        if (!this.head.next) {
+            return this.head;
+        }
+        let previousNode = null;
+        let currentNode = this.head;
+        this.tail = currentNode;
+        let nextNode = null;
+        while (currentNode) {
+            nextNode = currentNode.next;
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+            currentNode = nextNode;
+        }
+        this.head = previousNode;
+        console.log(JSON.stringify(this.head))
+    }
 }
 
 const myLinkedList = new LinkedList(10);
@@ -106,5 +128,5 @@ myLinkedList.append(40);
 myLinkedList.append(50);
 myLinkedList.append(60);
 myLinkedList.printList();
-myLinkedList.reverse();
+myLinkedList.reverse2();
 myLinkedList.printList();
