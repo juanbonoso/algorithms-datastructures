@@ -128,5 +128,5 @@ myLinkedList.append(40);
 myLinkedList.append(50);
 myLinkedList.append(60);
 myLinkedList.printList();
-myLinkedList.reverse2();
+myLinkedList.reverseImproved();
 myLinkedList.printList();
