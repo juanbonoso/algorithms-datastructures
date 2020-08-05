@@ -19,13 +19,17 @@ class Queue {
         if (this.isEmpty()) {
             this.first = newNode;
             this.last = newNode;
+        } else {
+            this.last.next = newNode;
+            this.last = newNode;
         }
-        this.last.next = newNode;
-        this.last = newNode;
         this.length++;
     }
     dequeue() {
+        if (this.isEmpty()) return;
+        if (this.length === 1) this.last = null;
         this.first = this.first.next;
+        this.length--;
     }
     isEmpty() {
         return !this.first && !this.last & !this.length;
