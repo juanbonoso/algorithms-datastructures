@@ -6,10 +6,10 @@ class CrazyQueue {
     }
 
     peek() {
-        if (this.stack1.length) {
-            return this.front;
+        if (this.stack2.length) {
+            return this.stack2[this.stack2.length - 1];
         }
-        return this.stack2[this.stack2.length - 1]; // peek from stack 2
+        return this.front; // peek from stack 2
     }
 
     push(value) {
@@ -42,5 +42,8 @@ myQueue.push('Pavel');
 myQueue.print();
 console.log(myQueue.peek());
 myQueue.pop();
+myQueue.print();
+console.log(myQueue.peek());
+myQueue.push('John');
 myQueue.print();
 console.log(myQueue.peek());
