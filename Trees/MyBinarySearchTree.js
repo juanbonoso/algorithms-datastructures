@@ -36,6 +36,21 @@ class BinarySearchTree {
     }
     lookup(value) {
         //Code here
+        if (!this.root) {
+            return false;
+        }
+
+        let currentNode = this.root;
+        while (currentNode) {
+            if (value < currentNode.value) {
+                currentNode = currentNode.left;
+            } else if (value > currentNode.value) {
+                currentNode = currentNode.right;
+            } else if (value === currentNode.value) {
+                return currentNode;
+            }
+        }
+        return false;
     }
     // remove
     traverse(node) {
@@ -61,3 +76,5 @@ tree.print();
 //     9
 //  4     20
 //1  6  15  170
+
+console.log(tree.lookup(9));
