@@ -1,4 +1,6 @@
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+const numbers2 = [1, 2, 3, 4, 5];
+
 // We start from the Second item --loop
 // We compare the current item with all the previous item
 // We swicth until a previous item previos item < current ITEM
@@ -14,6 +16,18 @@ function insertionSort(array) {
             } else {
                 j = 0;
             }
+        }
+    }
+}
+
+function insertionSortWhile(array) {
+    for (let i = 1; i < array.length; i++) {
+        let currentIndex = i;
+        while (array[currentIndex - 1] > array[currentIndex]) {
+            const temp = array[currentIndex - 1];
+            array[currentIndex - 1] = array[currentIndex];
+            array[currentIndex] = temp;
+            currentIndex--;
         }
     }
 }
