@@ -1,0 +1,12 @@
+//If you know a solution is not far from the root of the tree:
+Breath First Search
+//If the tree is very deep and solutions are rare: 
+BFS (DFS WILL TAKE LONG TIME)
+//If the tree is very wide:
+DFS (BFS WILL TOO MUCH MEMORY, WILL TRACK NODES ON ALL THE SAME LEVEL)
+//If solutions are frequent but located deep in the tree:
+Depth First Search (WILL BE QUICKER THAN BFS)
+//Determining whether a path exists between two nodes:
+Depth First Search  (THE REASON FOR DFS TO EXIST)
+//Finding the shortest path:
+Breath First Search (BFS)
