@@ -1,0 +1,23 @@
+//#1 - Sort 10 schools around your house by distance:
+--> Insertion sort because it's good for small datasets
+//#2 - eBay sorts listings by the current Bid amount:
+// Radix/Counting sort because is only integer numbers and is fast
+(you also know a range, and the average value of the items)
+//#3 - Sport scores on ESPN
+//  Quick sort (many sports, we can avoid usign to much data)
+//  Merge Sort
+//#4 - Massive database (can't fit all into memory) needs to sort through past year's user data
+// Heap sort
+// Merge sort (if we are not going to sort in memory.. this could be very good and i want it fast)
+//#5 - Almost sorted Udemy review data needs to update and add 2 new reviews
+// Inserion Sort
+//#6 - Temperature Records for the past 50 years in Canada
+// Radix sort (in case you know the range of Temperature and you don't need to be very accurate with decimals)
+// Quick sort
+//#7 - Large user name database needs to be sorted. Data is very random.
+// Quick Sort
+//#8 - You want to teach sorting for the first time
+
+Buble sort
+Insertion Sort
+Selection sort
