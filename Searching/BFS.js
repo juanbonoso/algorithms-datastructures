@@ -144,8 +144,66 @@ class BinarySearchTree {
         }
         return list;
     }
+    breathFirstSearchRecursive(queue, list) {
+        if (!queue.length) {
+            return list;
+        }
+        const currentNode = queue.shift();
+        list.push(currentNode.value);
+        if (currentNode.left) {
+            queue.push(currentNode.left);
+        }
+        if (currentNode.right) {
+            queue.push(currentNode.right);
+        }
+        return this.breathFirstSearchRecursive(queue, list);
+    }
+
+    DFSInorder() {
+        return traverseInOrder(this.root, []);
+    }
+
+    DFSPostorder() {
+        return traversePostOrder(this.root, []);
+    }
+
+    DFSPreorder() {
+        return traversePreOrder(this.root, []);
+    }
 }
 
+function traverseInOrder(node, list) {
+    if (node.left) {
+        traverseInOrder(node.left, list);
+    }
+    list.push(node.value);
+    if (node.right) {
+        traverseInOrder(node.right, list);
+    }
+    return list;
+}
+
+function traversePreOrder(node, list) {
+    list.push(node.value);
+    if (node.left) {
+        traversePreOrder(node.left, list);
+    }
+    if (node.right) {
+        traversePreOrder(node.right, list);
+    }
+    return list;
+}
+
+function traversePostOrder(node, list) {
+    if (node.left) {
+        traversePostOrder(node.left, list);
+    }
+    if (node.right) {
+        traversePostOrder(node.right, list);
+    }
+    list.push(node.value);
+    return list;
+}
 //     9
 //  4     20
 //1  6  15  170
@@ -158,5 +216,7 @@ tree.insert(20);
 tree.insert(170);
 tree.insert(15);
 tree.insert(1);
-tree.insert(0);
-console.log(tree.breathFirstSearch());
+// tree.insert(0);
+// console.log(tree.breathFirstSearch());
+// console.log(tree.breathFirstSearchRecursive([tree.root], []));
+console.log(tree.DFSPostorder());
