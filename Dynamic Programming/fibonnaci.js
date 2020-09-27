@@ -18,3 +18,10 @@ function fibonnaciMaster() {
 const fasterFib = fibonnaciMaster();
 console.log('DP', fasterFib(35));
 console.log(calculations);
+
+const total = 0;
+for (let i = 0; i < array.length; i += 2) {
+    const moneyInEachHouse = array[i];
+    total += moneyInEachHouse;
+}
+return total;
